@@ -1,35 +1,42 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Character {
     protected String name;
+    protected int craft;
     protected int health;
-    protected int attack;
-    protected int defense;
-    protected int [] inventory;
+    protected List<Item> inventory = new ArrayList<>();
 
-     public Character(String name, int health, int attack, int defense) {
+    public Character(String name, int health, int defense, int craft) {
         this.name = name;
+        this.craft = craft;
         this.health = health;
-        this.attack = attack;
-        this.defense = defense;
     }
 
-    public String getName(){
-         return this.name;
+    public String getName() {
+        return this.name;
     }
 
-    public int getHealth(){
-         return this.health;
+    public int getHealth() {
+        return this.health;
     }
 
-    public void getStats(){
-         System.out.println("Attack: " + this.attack + "Defence: " + this.defense);
+    public int getCraft() {
+        return this.craft;
     }
 
-    public boolean takeDamage(int damage){
-         this.health = this.health - damage;
-         if (this.health > 0){
-             return false;
-         }
-         return true;
+    public void addToInventory(Item item) {
+        this.inventory.add(item);
     }
 
+    public boolean takeDamage(int damage) {
+        this.health = this.health - damage;
+
+        if (this.health > 0) {
+            return false;
+        }
+        return true;
+
+    }
 }
+
