@@ -1,2 +1,6 @@
-package PACKAGE_NAME;public class Sword {
+    public class Sword extends Item {
+    public Sword() {
+        super("Sword", 8, 0);
+    }
 }
+
