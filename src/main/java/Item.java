@@ -1,11 +1,16 @@
 public class Item {
-    int power;
-    int defence;
+    protected int power;
+    protected int defence;
 
     public Item(String name, int power, int defence) {
         this.power = power;
         this.defence = defence;
     }
+
+    public int getPower(){
+        return this.power;
+    }
+
 }
 
 
