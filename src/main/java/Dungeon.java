@@ -35,5 +35,25 @@ public class Dungeon {
         }
         return false;
     }
+
+    public List<Action> getActions() {
+        List<Action> actions = new ArrayList<>();
+        Chamber here = currentChamber;
+
+        for (Door door : here.getDoors()) {
+            if (door.isGuarded()) {
+                actions.add(new Fight(player, door));
+            }
+        }
+        if (here.getItems() != null) {
+            actions.add(new PickUp(player, here));
+        }
+        for (Door door : here.getDoors()) {
+            if (!door.isGuarded()) {
+                actions.add(new Move(this, door));
+            }
+        }
+        return actions;
+    }
 }
 

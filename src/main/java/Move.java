@@ -1,12 +1,15 @@
 public class Move implements Action{
     private Dungeon dungeon;
     private Door door;
-    private Chamber chamber;
 
     public Move(Dungeon dungeon, Door door, Chamber chamber){
         this.dungeon = dungeon;
         this.door = door;
-        this.chamber = chamber;
+    }
+
+    public Move(Dungeon dungeon, Door door){
+        this.dungeon = dungeon;
+        this.door = door;
     }
 
     @Override
@@ -16,6 +19,7 @@ public class Move implements Action{
 
     @Override
     public void execute(){
-        dungeon.setCurrentChamber(this.chamber);
+        Chamber chamber = this.door.getChamber();
+        dungeon.setCurrentChamber(chamber);
     }
 }
