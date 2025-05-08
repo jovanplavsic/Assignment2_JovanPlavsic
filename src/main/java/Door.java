@@ -10,4 +10,12 @@ public class Door {
         a.addDoor(this);
         b.addDoor(this);
     }
+
+    public static Door connect(Chamber a, Chamber b) {
+        return new Door(a, b, null);
+    }
+
+    public static Door connect(Chamber a, Chamber b, Monster guard) {
+        return new Door(a, b, guard);
+    }
 }
