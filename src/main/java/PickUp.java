@@ -22,4 +22,13 @@ public class PickUp implements Action{
         player.addToInventory(this.items);
     }
 
+    @Override
+    public String toString(){
+        StringBuilder s = new StringBuilder();
+
+        for (Item item : this.items){
+            s.append(item.getName() + " ");
+        }
+        return s.toString();
+    }
 }

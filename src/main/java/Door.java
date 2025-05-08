@@ -32,7 +32,15 @@ public class Door {
         return false;
     }
 
-    public Chamber getChamber() {
-        return this.a;
+    public Chamber[] getChambers() {
+        return new Chamber[]{this.a, this.b};
+    }
+
+    public Chamber otherSide(Chamber from) {
+        if (from == a) {
+            return b;
+        } else {
+            return a;
+        }
     }
 }

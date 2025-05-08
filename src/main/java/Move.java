@@ -19,7 +19,13 @@ public class Move implements Action{
 
     @Override
     public void execute(){
-        Chamber chamber = this.door.getChamber();
-        dungeon.setCurrentChamber(chamber);
+        Chamber next = this.door.otherSide(dungeon.getCurrentChamber());
+        dungeon.setCurrentChamber(next);
+
+    }
+
+    @Override
+    public String toString(){
+        return this.door.otherSide(dungeon.getCurrentChamber()).toString();
     }
 }
