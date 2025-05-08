@@ -29,9 +29,6 @@ public class Character {
     }
 
 
-
-
-
     public void addToInventory(Item item) {
         this.inventory.add(item);
     }

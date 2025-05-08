@@ -11,6 +11,19 @@ public class Item {
         return this.power;
     }
 
+    public int getDefence(){
+        return  this.defence;
+    }
+
+    public void diminishDefence(int damage){
+        if (damage > this.defence){
+            this.defence -= damage;
+        }
+        else {
+            System.out.println("Shield Broken");
+        }
+    }
+
 }
 
 
