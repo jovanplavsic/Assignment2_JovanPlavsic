@@ -2,7 +2,7 @@ public class Axe extends Item {
     public Axe() {
         super("Axe", 5, 0);
     }
-    public void throwAxe(Character user, Character target) {
+    public void use(Character user, Monster target) {
         int damage = user.getStrength() * getPower();
 
         System.out.println("Throw Axe at " + target.getName()

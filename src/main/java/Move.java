@@ -26,6 +26,6 @@ public class Move implements Action{
 
     @Override
     public String toString(){
-        return this.door.otherSide(dungeon.getCurrentChamber()).toString();
+        return "Move to next chamber";
     }
 }

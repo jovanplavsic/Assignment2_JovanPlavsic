@@ -22,4 +22,9 @@ public class Monster {
     public String getDescription(){
         return this.name + ": " + this.strength + ", " + this.craft + ", " + this.health;
     }
+
+    public void takeDamage(int damage) {
+        this.health = this.health - damage;
+
+    }
 }

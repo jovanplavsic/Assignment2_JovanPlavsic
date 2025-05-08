@@ -1,4 +1,4 @@
-public class Item {
+public abstract class Item {
     private String name;
     protected int power;
     protected int defence;
@@ -8,6 +8,8 @@ public class Item {
         this.power = power;
         this.defence = defence;
     }
+
+    public abstract void use(Character user, Monster target);
 
     public int getPower(){
         return this.power;

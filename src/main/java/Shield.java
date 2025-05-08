@@ -3,11 +3,9 @@ public class Shield extends Item{
         super("Shield", 0, 10);
     }
 
-    public int useShield(Character user, Character target) {
+    public void use(Character user, Character target) {
        int protection = this.getDefence();
 
        this.diminishDefence(1);
-
-       return protection;
     }
 }

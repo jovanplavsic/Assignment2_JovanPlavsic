@@ -3,7 +3,7 @@ public class Wand extends Item {
         super("Wand", 5, 0);
     }
 
-    public void castSpell(Character user, Character target) {
+    public void use(Character user, Monster target) {
         int damage = user.getCraft() * getPower();
 
         System.out.println("Casts a spell on " + target.getName()

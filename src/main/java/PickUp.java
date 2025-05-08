@@ -26,6 +26,10 @@ public class PickUp implements Action{
     public String toString(){
         StringBuilder s = new StringBuilder();
 
+        if (this.items.isEmpty()){
+            return "No items";
+        }
+
         for (Item item : this.items){
             s.append(item.getName() + " ");
         }

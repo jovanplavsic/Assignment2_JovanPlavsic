@@ -12,12 +12,14 @@ public class Fight implements Action{
 
     @Override
     public String printAction(){
-        Monster monster = door.getGuard();
+        Monster guard = door.getGuard();
         return "Fight " + guard.getName();
     }
 
     @Override
     public void execute(){
-
+        Monster guard = door.getGuard();
+        Item playerItem = player.inventory.getFirst();
+        playerItem.use(player, guard);
     }
 }
