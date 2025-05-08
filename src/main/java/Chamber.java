@@ -15,4 +15,8 @@ public class Chamber {
     public void addDoor(Door door){
         doors.add(door);
     }
+
+    public Item getItem(){
+        return this.item;
+    }
 }

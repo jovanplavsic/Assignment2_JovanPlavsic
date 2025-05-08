@@ -10,4 +10,8 @@ public class Monster {
         this.craft = craft;
         this.health = health;
     }
+
+    public String getName(){
+        return this.name;
+    }
 }

@@ -1,8 +1,10 @@
 public class Item {
+    private String name;
     protected int power;
     protected int defence;
 
     public Item(String name, int power, int defence) {
+        this.name = name;
         this.power = power;
         this.defence = defence;
     }
@@ -13,6 +15,10 @@ public class Item {
 
     public int getDefence(){
         return  this.defence;
+    }
+
+    public String getName(){
+        return this.name;
     }
 
     public void diminishDefence(int damage){

@@ -18,4 +18,8 @@ public class Door {
     public static Door connect(Chamber a, Chamber b, Monster guard) {
         return new Door(a, b, guard);
     }
+
+    public Monster getGuard(){
+       return this.guard;
+    }
 }

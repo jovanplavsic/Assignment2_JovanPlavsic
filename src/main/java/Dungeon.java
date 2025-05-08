@@ -7,9 +7,9 @@ public class Dungeon {
     private Chamber endChamber;
 
     public Dungeon(Character player, Chamber start, Chamber end) {
+        this.player = player;
         this.startChamber = start;
         this.endChamber = end;
     }
-
 }
 
