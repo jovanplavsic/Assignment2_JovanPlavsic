@@ -7,8 +7,8 @@ public class Door {
         this.b = b;
         this.guard = guard;
 
-        a.addDoor(this);
-        b.addDoor(this);
+        a.setDoor(this);
+        b.setDoor(this);
     }
 
     public static Door connect(Chamber a, Chamber b) {

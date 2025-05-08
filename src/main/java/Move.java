@@ -15,7 +15,7 @@ public class Move implements Action{
     }
 
     @Override
-    public void doAction(){
+    public void execute(){
         dungeon.setCurrentChamber(this.chamber);
     }
 }

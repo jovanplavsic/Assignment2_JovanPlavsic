@@ -17,7 +17,7 @@ public class Fight implements Action{
     }
 
     @Override
-    public void doAction(){
+    public void execute(){
 
     }
 }

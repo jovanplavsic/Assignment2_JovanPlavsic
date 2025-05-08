@@ -16,7 +16,7 @@ public class PickUp implements Action{
     }
 
     @Override
-    public void doAction(){
+    public void execute(){
         player.addToInventory(this.item);
     }
 }

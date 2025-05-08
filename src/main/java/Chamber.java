@@ -1,22 +1,27 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Chamber {
     private List<Door> doors = new ArrayList<>();
-    private Item item;
-
-    public Chamber(Item item){
-        this.item = item;
-    }
+    private List<Item> items = new ArrayList<>();
 
     public Chamber(){
     }
 
-    public void addDoor(Door door){
-        doors.add(door);
+    public Chamber(Item... items){
+        this.items.addAll(Arrays.asList(items));
     }
 
-    public Item getItem(){
-        return this.item;
+    public void addDoor(Door door){
+        this.doors.add(door);
+    }
+
+    public List<Door> getDoors(){
+        return this.doors;
+    }
+
+    public List<Item> getItems(){
+        return this.items;
     }
 }

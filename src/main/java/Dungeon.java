@@ -17,8 +17,23 @@ public class Dungeon {
         return this.currentChamber;
     }
 
+    public Chamber getStartChamber(){
+        return this.startChamber;
+    }
+
+    public Chamber getEndChamber(){
+        return this.endChamber;
+    }
+
     public void setCurrentChamber(Chamber chamber){
         this.currentChamber = chamber;
+    }
+
+    public boolean isFinished(){
+        if (this.player.getHealth() > 0){
+            return true;
+        }
+        return false;
     }
 }
 
