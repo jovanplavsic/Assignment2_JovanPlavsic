@@ -29,9 +29,13 @@ public class Character {
     }
 
 
-    public void addToInventory(Item item) {
-        this.inventory.add(item);
+//    public void addToInventory(Item item) {
+//        this.inventory.add(item);
+//    }
+    public void addToInventory(List<Item> items) {
+        inventory.addAll(items);
     }
+
 
     public boolean takeDamage(int damage) {
         this.health = this.health - damage;

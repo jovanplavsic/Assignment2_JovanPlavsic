@@ -1,22 +1,25 @@
+import java.util.List;
+
 public class PickUp implements Action{
     private Character player;
-    private Item item;
+     private List<Item> items;
     private Chamber chamber;
 
     public PickUp(Character player, Chamber chamber) {
         this.player = player;
         this.chamber = chamber;
-        this.item  = chamber.getItem();
+        this.items  = chamber.getItems();
     }
 
 
     @Override
     public String printAction(){
-        return "Pick up " + item.getName();
+        return "Pick up " + items;
     }
 
     @Override
     public void execute(){
-        player.addToInventory(this.item);
+        player.addToInventory(this.items);
     }
+
 }

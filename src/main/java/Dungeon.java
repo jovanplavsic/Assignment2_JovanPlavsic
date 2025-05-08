@@ -10,6 +10,7 @@ public class Dungeon {
     public Dungeon(Character player, Chamber start, Chamber end) {
         this.player = player;
         this.startChamber = start;
+        this.currentChamber = start;
         this.endChamber = end;
     }
 
@@ -30,7 +31,7 @@ public class Dungeon {
     }
 
     public boolean isFinished(){
-        if (this.player.getHealth() > 0){
+        if (this.player.getHealth() <= 0){
             return true;
         }
         return false;

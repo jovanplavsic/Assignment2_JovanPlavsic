@@ -24,13 +24,15 @@ public class Door {
     }
 
     public boolean isGuarded() {
-        if (this.guard.getHealth() > 0) {
-            return true;
+        if (this.guard != null) {
+            if (this.guard.getHealth() > 0) {
+                return true;
+            }
         }
         return false;
     }
 
-    public Chamber getChamber(){
+    public Chamber getChamber() {
         return this.a;
     }
 }

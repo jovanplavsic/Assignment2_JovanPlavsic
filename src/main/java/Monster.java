@@ -18,4 +18,8 @@ public class Monster {
     public int getHealth() {
         return this.health;
     }
+
+    public String getDescription(){
+        return this.name + ": " + this.strength + ", " + this.craft + ", " + this.health;
+    }
 }
