@@ -3,7 +3,7 @@ public class Shield extends Item{
         super("Shield", 0, 10);
     }
 
-    public void use(Character user, Character target) {
+    public void use(Character user, Monster target) {
        int protection = this.getDefence();
 
        this.diminishDefence(1);
