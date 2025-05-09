@@ -15,20 +15,21 @@ public class Dungeon {
         this.endChamber = end;
     }
 
-    public Chamber getCurrentChamber(){
+    public Chamber getCurrentChamber() {
         return this.currentChamber;
     }
-    public Chamber getPreviousChamber(){
+
+    public Chamber getPreviousChamber() {
         return this.previousChamber;
     }
 
-    public void setCurrentChamber(Chamber chamber){
+    public void setCurrentChamber(Chamber chamber) {
         this.previousChamber = this.currentChamber;
         this.currentChamber = chamber;
     }
 
-    public boolean isFinished(){
-        if (this.player.getHealth() <= 0){
+    public boolean isFinished() {
+        if (this.player.getHealth() <= 0) {
             return true;
         }
         return false;
@@ -37,17 +38,15 @@ public class Dungeon {
     public List<Action> getActions() {
         List<Action> actions = new ArrayList<>();
         Chamber here = currentChamber;
+        if (here.getItems() != null) {
+            actions.add(new PickUp(player, here));
+        }
 
         for (Door door : here.getDoors()) {
             if (door.isGuarded()) {
                 actions.add(new Fight(player, door));
             }
-        }
-        if (here.getItems() != null) {
-            actions.add(new PickUp(player, here));
-        }
-        for (Door door : here.getDoors()) {
-                actions.add(new Move(this, door));
+            actions.add(new Move(this, door));
         }
         return actions;
     }

@@ -18,20 +18,20 @@ public class Character {
     public String getName() {
         return this.name;
     }
+
     public int getStrength() {
         return this.craft;
     }
+
     public int getCraft() {
         return this.craft;
     }
+
     public int getHealth() {
         return this.health;
     }
 
 
-//    public void addToInventory(Item item) {
-//        this.inventory.add(item);
-//    }
     public void addToInventory(List<Item> items) {
         inventory.addAll(items);
     }
@@ -47,5 +47,19 @@ public class Character {
 
     }
 
+    public Item leftHand() {
+        if (inventory.isEmpty()) {
+            return null;
+        }
+        return inventory.get(0);
+    }
+
+    public Item rightHand() {
+        if (inventory.size() < 2) {
+            return null;
+        }
+        return inventory.get(1);
+    }
 }
+
 
