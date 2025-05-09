@@ -53,7 +53,9 @@ public class Fight implements Action {
         int monsterRoll = rng.nextInt(6) + 1 + monsterSkill;
         int playerRoll = rng.nextInt(6) + 1 + playerSkill + itemBonus;
 
-        System.out.println("You roll" + playerRoll + "vs. monster’s " + monsterRoll);
+        System.out.println();
+        System.out.println("BEGIN FIGHT");
+        System.out.println("You roll " + playerRoll + " vs. monster’s " + monsterRoll);
 
         int diff = playerRoll - monsterRoll;
         if (diff > 0) {
@@ -61,12 +63,14 @@ public class Fight implements Action {
             System.out.println("You deal " + diff + " damage! Monster health is now " + guard.getHealth());
             if (guard.getHealth() <= 0) {
                 System.out.println("Monster defeated!");
+                System.out.println();
             }
         } else {
             int damage = -diff;
             int newPlayerHealth = player.getHealth() - damage;
             player.takeDamage(diff);
             System.out.println("Monster deals " + diff + " damage! Your health is now " + player.getHealth());
+            System.out.println();
         }
 
 

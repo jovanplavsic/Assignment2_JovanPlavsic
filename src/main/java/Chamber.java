@@ -25,9 +25,12 @@ public class Chamber {
         return this.doors;
     }
 
-    public List<Item> getItems(){
-        return this.items;
+    public List<Item> getItems(){ return this.items;}
+
+    public void removeItems(List<Item> items){
+        this.items.removeAll(items);
     }
+
 
     public int getId(){
         return this.id;

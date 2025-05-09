@@ -24,4 +24,8 @@ public class Monster {
     public void takeDamage(int damage) {
         this.health = this.health - damage;
     }
+
+    public int getCraft(){ return this.craft; }
+    public int getStrength(){ return this.strength; }
+
 }

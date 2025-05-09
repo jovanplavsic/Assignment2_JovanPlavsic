@@ -31,11 +31,27 @@ public class Character {
         return this.health;
     }
 
+    public List<Item> getInventory(){return this.inventory; }
 
     public void addToInventory(List<Item> items) {
         inventory.addAll(items);
     }
 
+    public String viewInventory() {
+        System.out.println();
+
+        if (inventory.isEmpty()) {
+            return "Inventory is empty.";
+        }
+        StringBuilder sb = new StringBuilder("YOUR INVENTORY\n");
+        for (int i = 0; i < inventory.size(); i++) {
+            sb.append(i)
+                    .append(" | ")
+                    .append(inventory.get(i).getName())
+                    .append("\n");
+        }
+        return sb.toString();
+    }
 
     public boolean takeDamage(int damage) {
         this.health = this.health - damage;
@@ -61,16 +77,16 @@ public class Character {
         return inventory.get(1);
     }
 
-    public void switchItems(){
-    if (inventory.size() < 2) {
+    public void switchItems(int a, int b) {
+        if (inventory.size() < 2) {
             return;
         }
-        Item first  = inventory.get(0);
-        Item second = inventory.get(1);
+        Item one = inventory.get(a);
+        Item two = inventory.get(b);
 
-        inventory.set(0, second);
-        inventory.set(1, first);
-        }
+        inventory.set(a, two);
+        inventory.set(b, one);
+    }
 }
 
 

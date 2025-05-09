@@ -30,6 +30,10 @@ public class Dungeon {
 
     public boolean isFinished() {
         if (this.player.getHealth() <= 0) {
+            System.out.println("YOU DIED");
+            return true;
+        } else if (this.currentChamber == this.endChamber){
+            System.out.println("YOU WIN");
             return true;
         }
         return false;
@@ -38,15 +42,19 @@ public class Dungeon {
     public List<Action> getActions() {
         List<Action> actions = new ArrayList<>();
         Chamber here = currentChamber;
-        if (here.getItems() != null) {
+        if (!this.player.inventory.isEmpty()){
+            actions.add(new Swap(player));
+        }
+        if (!here.getItems().isEmpty()) {
             actions.add(new PickUp(player, here));
         }
 
         for (Door door : here.getDoors()) {
             if (door.isGuarded()) {
-                actions.add(new Fight(player, door));
+                actions.add(new Fight(player, door.getGuard()));
+            }else{
+                actions.add(new Move(this, door));
             }
-            actions.add(new Move(this, door));
         }
         return actions;
     }

@@ -22,14 +22,17 @@ public class TextUI {
         s.append("You are in a chamber with " + r.getDoors().size() + " doors\n");
         s.append("There are " + r.getItems().size() + " items in the chamber\n");
 
+        int i = 0;
         for (Door door : r.getDoors()) {
-            Monster guard = door.getGuard();
-            if (guard != null) {
-                s.append("Guard: ")
-                        .append(guard.getDescription())
-                        .append("\n");
-            } else {
-                s.append("No guard at this door\n");
+            if (door.isGuarded()) {
+                Monster guard = door.getGuard();
+                if (guard != null) {
+                    s.append("Door " + i++ + " is guarded by a ")
+                            .append(guard.getDescription())
+                            .append("\n");
+                } else {
+                    s.append("No guard at this door\n");
+                }
             }
         }
 
