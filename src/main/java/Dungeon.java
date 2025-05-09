@@ -5,6 +5,7 @@ public class Dungeon {
     private Character player;
     private Chamber startChamber;
     private Chamber currentChamber;
+    private Chamber previousChamber = null;
     private Chamber endChamber;
 
     public Dungeon(Character player, Chamber start, Chamber end) {
@@ -17,16 +18,12 @@ public class Dungeon {
     public Chamber getCurrentChamber(){
         return this.currentChamber;
     }
-
-    public Chamber getStartChamber(){
-        return this.startChamber;
-    }
-
-    public Chamber getEndChamber(){
-        return this.endChamber;
+    public Chamber getPreviousChamber(){
+        return this.previousChamber;
     }
 
     public void setCurrentChamber(Chamber chamber){
+        this.previousChamber = this.currentChamber;
         this.currentChamber = chamber;
     }
 
@@ -50,9 +47,7 @@ public class Dungeon {
             actions.add(new PickUp(player, here));
         }
         for (Door door : here.getDoors()) {
-            if (!door.isGuarded()) {
                 actions.add(new Move(this, door));
-            }
         }
         return actions;
     }

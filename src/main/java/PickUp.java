@@ -31,7 +31,7 @@ public class PickUp implements Action{
         }
 
         for (Item item : this.items){
-            s.append(item.getName() + " ");
+            s.append("Pick up " + item.getName() + " ");
         }
         return s.toString();
     }

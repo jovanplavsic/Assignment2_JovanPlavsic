@@ -19,13 +19,22 @@ public class Move implements Action{
 
     @Override
     public void execute(){
-        Chamber next = this.door.otherSide(dungeon.getCurrentChamber());
-        dungeon.setCurrentChamber(next);
+        if (!door.isGuarded()){
+            Chamber next = this.door.otherSide(dungeon.getCurrentChamber());
+            dungeon.setCurrentChamber(next);
+            System.out.println("Moved to chamber ");
+        } else {
+            System.out.println("Can't pass, monster in the way");
+        }
 
     }
 
     @Override
     public String toString(){
-        return "Move to next chamber";
+        Chamber current = this.door.otherSide(this.dungeon.getCurrentChamber());
+        if (current == this.dungeon.getPreviousChamber()){
+            return "Move to previous chamber";
+        }
+        return "Move to chamber " + current.getId();
     }
 }
