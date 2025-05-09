@@ -60,6 +60,17 @@ public class Character {
         }
         return inventory.get(1);
     }
+
+    public void switchItems(){
+    if (inventory.size() < 2) {
+            return;
+        }
+        Item first  = inventory.get(0);
+        Item second = inventory.get(1);
+
+        inventory.set(0, second);
+        inventory.set(1, first);
+        }
 }
 
 
