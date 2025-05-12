@@ -11,21 +11,34 @@ public class Monster {
         this.health = health;
     }
 
-    public String getName() { return this.name; }
+    public String getName() {
+        return this.name;
+    }
 
     public int getHealth() {
         return this.health;
     }
 
     public String getDescription() {
-        return this.name + ": " + this.strength + ", " + this.craft + ", " + this.health;
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.name).append("\n")
+                .append("Str: ").append(this.strength).append(" ")
+                .append("Cft: ").append(this.craft).append(" ")
+                .append("Hth: ").append(this.health).append(" ");
+        return sb.toString();
     }
 
     public void takeDamage(int damage) {
         this.health = this.health - damage;
     }
 
-    public int getCraft(){ return this.craft; }
-    public int getStrength(){ return this.strength; }
+    public int getCraft() {
+        return this.craft;
+    }
+
+    public int getStrength() {
+        return this.strength;
+    }
 
 }

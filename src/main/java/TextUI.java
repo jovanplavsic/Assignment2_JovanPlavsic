@@ -5,7 +5,9 @@ import java.util.*;
 
 public class TextUI {
     public void play(Dungeon d) {
+        System.out.println("---------------------------------------");
         System.out.println("Loading game...");
+        System.out.println();
         while (!d.isFinished()) {
             print(d);
             Action a = ask(d);
@@ -19,8 +21,19 @@ public class TextUI {
     private void print(Dungeon d) {
         Chamber r = d.getCurrentChamber();
         StringBuilder s = new StringBuilder();
-        s.append("You are in a chamber with " + r.getDoors().size() + " doors\n");
-        s.append("There are " + r.getItems().size() + " items in the chamber\n");
+        s.append("Chamber " + r.getId() + " has " + r.getDoors().size() + " doors ");
+        s.append("and " + r.getItems().size() + " items\n\n");
+
+        int j = 0;
+        if (!r.getItems().isEmpty()) {
+            s.append("Items: \n");
+            for (Item item : r.getItems()) {
+                s.append("[" + j++ +"]");
+                s.append(item.getName()).append("\n");
+            }
+            s.append("\n");
+        }
+
 
         int i = 0;
         for (Door door : r.getDoors()) {

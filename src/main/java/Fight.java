@@ -75,8 +75,6 @@ public class Fight implements Action {
             System.out.println(this.guard.getName() + " deals " + 10 + " damage! Your health is now " + player.getHealth());
             System.out.println();
         }
-
-
     }
 
     @Override
