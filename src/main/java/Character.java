@@ -8,7 +8,7 @@ public class Character {
     protected int health;
     protected List<Item> inventory = new ArrayList<>();
 
-    public Character(String name, int strength, int health, int craft) {
+    public Character(String name, int strength, int craft, int health) {
         this.name = name;
         this.strength = strength;
         this.craft = craft;
@@ -31,7 +31,9 @@ public class Character {
         return this.health;
     }
 
-    public List<Item> getInventory(){return this.inventory; }
+    public List<Item> getInventory() {
+        return this.inventory;
+    }
 
     public void addToInventory(List<Item> items) {
         inventory.addAll(items);
@@ -79,7 +81,12 @@ public class Character {
 
     public void switchItems(int a, int b) {
         if (inventory.size() < 2) {
-            return;
+            throw new IllegalStateException("Only one item in inventory");
+        }
+        if (a < 0 || a >= inventory.size() || b < 0 || b >= inventory.size()) {
+            throw new IndexOutOfBoundsException(
+                    "Invalid indices: " + a + ", " + b
+            );
         }
         Item one = inventory.get(a);
         Item two = inventory.get(b);
@@ -87,6 +94,7 @@ public class Character {
         inventory.set(a, two);
         inventory.set(b, one);
     }
+
 }
 
 
