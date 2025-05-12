@@ -1,38 +1,18 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Character {
-    protected String name;
-    protected int strength;
-    protected int craft;
-    protected int health;
-    protected List<Item> inventory = new ArrayList<>();
+/**
+ * A Player‐controlled creature who can carry items.
+ */
+public class Character extends Creature {
+    private List<Item> inventory = new ArrayList<>();
 
-    public Character(String name, int strength, int craft, int health) {
-        this.name = name;
-        this.strength = strength;
-        this.craft = craft;
-        this.health = health;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public int getStrength() {
-        return this.craft;
-    }
-
-    public int getCraft() {
-        return this.craft;
-    }
-
-    public int getHealth() {
-        return this.health;
+    public Character(String name, int str, int cft, int hp) {
+        super(name, str, cft, hp);
     }
 
     public List<Item> getInventory() {
-        return this.inventory;
+        return inventory;
     }
 
     public void addToInventory(List<Item> items) {
@@ -53,16 +33,6 @@ public class Character {
                     .append("\n");
         }
         return sb.toString();
-    }
-
-    public boolean takeDamage(int damage) {
-        this.health = this.health - damage;
-
-        if (this.health > 0) {
-            return false;
-        }
-        return true;
-
     }
 
     public Item leftHand() {
@@ -94,7 +64,7 @@ public class Character {
         inventory.set(a, two);
         inventory.set(b, one);
     }
-
 }
+
 
 
