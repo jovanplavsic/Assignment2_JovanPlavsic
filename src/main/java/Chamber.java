@@ -31,7 +31,6 @@ public class Chamber {
         this.items.removeAll(items);
     }
 
-
     public int getId(){
         return this.id;
     }

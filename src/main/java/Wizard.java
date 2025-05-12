@@ -2,7 +2,7 @@ public class Wizard extends Character{
 
     public Wizard(String name) {
         // name, health, craft
-        super(name, 50, 80, 100);
+        super(name, 30, 80, 100);
     }
 }
 
