@@ -22,8 +22,24 @@ public class Move implements Action{
         if (!door.isGuarded()){
             Chamber next = this.door.otherSide(dungeon.getCurrentChamber());
             dungeon.setCurrentChamber(next);
-            System.out.println("\n----------------------------------\n");
-            System.out.println("Moved to chamber " + next.getId());
+            System.out.println("\n---------------------------\n");
+
+            System.out.println("" +
+                    "        ______\n" +
+                    "     ,-' ;  ! `-.\n" +
+                    "    / :  !  :  . \\\n" +
+                    "   |_ ;   __:  ;  |\n" +
+                    "   )| .  :)(.  !  |\n" +
+                    "   |\"    (##)  _  |\n" +
+                    "   |  :  ;`'  (_) (\n" +
+                    "   |  :  :  .     |\n" +
+                    "   )| !  ,  ;  ;  |\n" +
+                    "   |  .  .  :  :  |\n" +
+                    "   |\" .  |  :  .  |\n" +
+                    "   |_____;----.___|\n");
+
+            System.out.println("YOU MOVED CHAMBERS");
+            System.out.println();
 
         } else {
             System.out.println("Can't pass, monster in the way");

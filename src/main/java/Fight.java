@@ -29,7 +29,7 @@ public class Fight implements Action {
         int monsterSkill;
         if (useStrength) {
             monsterSkill = guard.getStrength();
-        } else {
+        } else { 
             monsterSkill = guard.getCraft();
         }
 
@@ -41,35 +41,38 @@ public class Fight implements Action {
         }
 
         Item right = player.rightHand();
+        Item left = player.leftHand();
+
         int itemBonus = 0;
         if (right != null) {
-            if (useStrength) {
-                itemBonus = right.getPower();
-            } else {
-                itemBonus = right.getPower();
+                itemBonus += right.getPower();
             }
-        }
+        if (left != null) {
+                itemBonus += left.getPower();
+            }
 
         int monsterRoll = rng.nextInt(6) + 1 + monsterSkill;
         int playerRoll = rng.nextInt(6) + 1 + playerSkill + itemBonus;
 
         System.out.println();
         System.out.println("BEGIN FIGHT");
-        System.out.println("You roll " + playerRoll + " vs. monster’s " + monsterRoll);
+        System.out.println("You roll " + playerRoll + " vs. " + this.guard.getName() + "’s " + monsterRoll);
 
         int diff = playerRoll - monsterRoll;
         if (diff > 0) {
             guard.takeDamage(diff);
-            System.out.println("You deal " + diff + " damage! Monster health is now " + guard.getHealth());
+            System.out.println("You deal " + diff + " damage! " + this.guard.getName() + " health is now " + guard.getHealth());
             if (guard.getHealth() <= 0) {
-                System.out.println("Monster defeated!");
+                System.out.println(this.guard.getName() + " defeated!");
                 System.out.println();
             }
-        } else {
-            int damage = -diff;
-            int newPlayerHealth = player.getHealth() - damage;
+        } else if (diff < 0){
             player.takeDamage(diff);
-            System.out.println("Monster deals " + diff + " damage! Your health is now " + player.getHealth());
+            System.out.println(this.guard.getName() + " deals " + diff + " damage! Your health is now " + player.getHealth());
+            System.out.println();
+        } else{
+            player.takeDamage(10);
+            System.out.println(this.guard.getName() + " deals " + 10 + " damage! Your health is now " + player.getHealth());
             System.out.println();
         }
 

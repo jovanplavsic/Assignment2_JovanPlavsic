@@ -11,7 +11,6 @@ public class PickUp implements Action{
         this.items  = chamber.getItems();
     }
 
-
     @Override
     public String printAction(){
         return "Pick up " + items;
