@@ -1,5 +1,7 @@
 package Environment;
 
+import Entities.Monster;
+
 public class Door {
     private Chamber a, b;
     private Monster guard;

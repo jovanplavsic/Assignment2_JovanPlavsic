@@ -7,6 +7,6 @@ public class Axe extends Item {
 
     /** Creates a new Axe with default power and durability. */
     public Axe() {
-        super("Axe", 5, 0);
+        super("Axe", 20, 0);
     }
 }

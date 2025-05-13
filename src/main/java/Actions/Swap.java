@@ -5,18 +5,20 @@ import Entities.Character;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+/** Simulate swapping items in inventory */
 public class Swap implements Action {
     private final Character player;
 
+    /** Create swap object*/
     public Swap(Character player) {
         this.player = player;
     }
 
-    @Override
-    public String printAction() {
-        return this.toString();
-    }
-
+    /** Execute logic of swapping by doing the following
+     * 1. Display inventory and indexes of items
+     * 2. Take 2 inputs
+     * 3. Swap the two items in those indexes
+     * */
     @Override
     public void execute() {
         System.out.println(player.viewInventory());
@@ -46,7 +48,7 @@ public class Swap implements Action {
         }
     }
 
-
+    /** Return string description of action */
     @Override
     public String toString() {
         return "View or Swap inventory items";

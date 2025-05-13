@@ -1,25 +1,28 @@
 package Actions;
 
 import Entities.Character;
+import Entities.Monster;
+import Entities.Item;
 
 import java.util.Random;
 
+/** Simulates fighting in game between user and monster*/
 public class Fight implements Action {
     private Character player;
     private Monster guard;
     private final Random rng = new Random();
 
+    /** Create fight object */
     public Fight(Character player, Monster guard) {
         this.player = player;
         this.guard = guard;
     }
 
-
-    @Override
-    public String printAction() {
-        return "Fight " + this.guard.getName();
-    }
-
+    /** Execute logic of fight by doing the following:
+     * 1. Decide whether to use strength or craft metrics
+     * 2. Roll dice and apply item bonus
+     * 3. Subtract difference from losing sides health
+     * */
     @Override
     public void execute() {
 
@@ -80,6 +83,8 @@ public class Fight implements Action {
             System.out.println();
         }
     }
+
+    /** Make string summary of action*/
 
     @Override
     public String toString() {

@@ -13,12 +13,10 @@ public class PrintError implements Action {
     }
 
     @Override
-    public String printAction() {
-        return "Input error: " + exception.getMessage();
-    }
-
-    @Override
     public void execute() {
         System.out.println("Error: " + exception.getMessage());
      }
+
+     @Override
+    public String toString(){ return "Error: " + exception.getMessage();}
 }
