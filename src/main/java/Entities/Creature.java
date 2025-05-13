@@ -1,7 +1,7 @@
 package Entities;
 
 /**
- *
+ * Represent a creature, which is passed down to user and monster classes
  */
 public abstract class Creature {
     protected String name;
@@ -16,13 +16,16 @@ public abstract class Creature {
         this.health   = health;
     }
 
+    /**
+     * Implement getters for all attributes
+     */
     public String getName()     { return name;     }
     public int    getStrength() { return strength; }
     public int    getCraft()    { return craft;    }
     public int    getHealth()   { return health;   }
 
     /**
-     *
+     *Decrease character health by damage amount
      */
     public boolean takeDamage(int damage) {
         health -= damage;

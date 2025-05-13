@@ -37,13 +37,14 @@ public class Character extends Creature {
         return sb.toString();
     }
 
+    /** Return item in 0 index */
     public Item leftHand() {
         if (inventory.isEmpty()) {
             return null;
         }
         return inventory.get(0);
     }
-
+    /** Return item in 1 index */
     public Item rightHand() {
         if (inventory.size() < 2) {
             return null;
@@ -51,6 +52,7 @@ public class Character extends Creature {
         return inventory.get(1);
     }
 
+    /** Swap items between two indexes that are passed as arguments */
     public void switchItems(int a, int b) {
         if (inventory.size() < 2) {
             throw new IllegalStateException("Only one item in inventory");

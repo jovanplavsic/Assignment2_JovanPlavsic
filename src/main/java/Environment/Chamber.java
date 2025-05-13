@@ -6,36 +6,64 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
+/**
+ * Represents a chamber which can contain items
+ */
 public class Chamber {
     private List<Door> doors = new ArrayList<>();
     private List<Item> items = new ArrayList<>();
     private static int nextId = 0;
     private final int id;
 
-    public Chamber(){
+
+    /**
+     * Create chamber object
+     */
+    public Chamber() {
         this.id = nextId++;
     }
 
-    public Chamber(Item... items){
+    /**
+     * Create chamber object with items
+     */
+    public Chamber(Item... items) {
         this.id = nextId++;
         this.items.addAll(Arrays.asList(items));
     }
 
-    public void addDoor(Door door){
+/**
+     * Add door to chamber
+     */
+    public void addDoor(Door door) {
         this.doors.add(door);
     }
 
-    public List<Door> getDoors(){
+    /**
+     * Return list of all doors in chamber
+     */
+    public List<Door> getDoors() {
         return this.doors;
     }
 
-    public List<Item> getItems(){ return this.items;}
+    /**
+     * Return list of all items in chamber
+     */
+    public List<Item> getItems() {
+        return this.items;
+    }
 
-    public void removeItems(List<Item> items){
+    /**
+     * Remove all items from chamber
+     */
+    public void removeItems(List<Item> items) {
         this.items.removeAll(items);
     }
 
-    public int getId(){
+/**
+     * Return ID of chamber
+     */
+    public int getId() {
         return this.id;
     }
 }

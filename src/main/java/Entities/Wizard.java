@@ -1,5 +1,8 @@
 package Entities;
 
+/**
+ * Represents a wizard which has more craft than strength
+ */
 public class Wizard extends Character {
 
     public Wizard(String name) {

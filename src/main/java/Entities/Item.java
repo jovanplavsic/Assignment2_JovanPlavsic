@@ -18,10 +18,6 @@ public abstract class Item {
         return this.power;
     }
 
-    public int getDefence(){
-        return  this.defence;
-    }
-
     public String getName(){
         return this.name;
     }
