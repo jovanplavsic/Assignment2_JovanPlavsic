@@ -1,4 +1,9 @@
-public class Move implements Action{
+import Actions.Action;
+import Environment.Chamber;
+import Environment.Door;
+import Environment.Dungeon;
+
+public class Move implements Action {
     private Dungeon dungeon;
     private Door door;
 

@@ -1,6 +1,11 @@
+import Actions.Action;
+import Entities.Character;
+import Entities.Item;
+import Environment.Chamber;
+
 import java.util.List;
 
-public class PickUp implements Action{
+public class PickUp implements Action {
     private Character player;
      private List<Item> items;
     private Chamber chamber;
