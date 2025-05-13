@@ -1,13 +1,10 @@
+/**
+ * Represents an Axe which deals damage based on the users strength
+ */
 public class Axe extends Item {
+
+    /** Creates a new Axe with default power and durability. */
     public Axe() {
         super("Axe", 5, 0);
-    }
-    public void use(Character user, Monster target) {
-        int damage = user.getStrength() * getPower();
-
-        System.out.println("Throw Axe at " + target.getName()
-                           + " for " + damage + " damage.");
-
-        target.takeDamage(this.power);
     }
 }
