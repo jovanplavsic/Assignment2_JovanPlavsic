@@ -1,3 +1,9 @@
+import Entities.*;
+import Entities.Character;
+import Environment.Chamber;
+import Environment.Door;
+import Environment.Dungeon;
+
 public class Game {
     public static void main(String[] args) {
         // initialize some chambers

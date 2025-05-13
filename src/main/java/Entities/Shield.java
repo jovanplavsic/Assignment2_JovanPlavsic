@@ -1,5 +1,7 @@
+package Entities;
+
 /** Represent a shield item */
-public class Shield extends Item{
+public class Shield extends Item {
     public Shield() {
         super("Shield", 0, 10);
     }

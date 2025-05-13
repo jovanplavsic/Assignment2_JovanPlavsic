@@ -1,3 +1,5 @@
+package Environment;
+
 public class Door {
     private Chamber a, b;
     private Monster guard;

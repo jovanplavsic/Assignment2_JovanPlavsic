@@ -1,3 +1,5 @@
+package Entities;
+
 /** Represent a wand item */
 public class Wand extends Item {
     public Wand() {

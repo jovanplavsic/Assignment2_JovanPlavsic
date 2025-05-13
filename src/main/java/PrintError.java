@@ -1,6 +1,9 @@
+import Actions.Action;
+import Environment.Dungeon;
+
 import java.io.IOException;
 
-public class PrintError implements Action{
+public class PrintError implements Action {
     private final Dungeon dungeon;
     private final IOException exception;
 

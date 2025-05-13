@@ -1,3 +1,5 @@
+package Entities;
+
 /**
  * Represents an Axe which deals damage based on the users strength
  */

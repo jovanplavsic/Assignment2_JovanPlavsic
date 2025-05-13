@@ -1,3 +1,7 @@
+package Actions;
+
+import Entities.Character;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 

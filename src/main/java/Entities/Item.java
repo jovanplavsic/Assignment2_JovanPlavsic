@@ -1,4 +1,6 @@
-    /** Represents an item with a name, power, and defence*/
+package Entities;
+
+/** Represents an item with a name, power, and defence*/
 public abstract class Item {
     private String name;
     protected int power;

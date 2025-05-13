@@ -1,3 +1,10 @@
+import Actions.Action;
+import Entities.Item;
+import Entities.Monster;
+import Environment.Chamber;
+import Environment.Door;
+import Environment.Dungeon;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

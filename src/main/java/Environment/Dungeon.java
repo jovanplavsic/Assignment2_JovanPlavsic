@@ -1,3 +1,8 @@
+package Environment;
+
+import Actions.Action;
+import Entities.Character;
+
 import java.util.ArrayList;
 import java.util.List;
 

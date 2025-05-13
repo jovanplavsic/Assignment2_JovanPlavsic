@@ -1,3 +1,7 @@
+package Actions;
+
+import Entities.Character;
+
 import java.util.Random;
 
 public class Fight implements Action {
